@@ -10,6 +10,10 @@ Optional packages are:
 
 - [LightBDD.NUnit3](https://github.com/LightBDD/LightBDD)
 
+## Starting the Dojo
+
+Which kind of development environment is used, shouldn't make any difference. Start the Dojo when everybody is ready. This means every attendee had cloned the repository and opened the IDE of choice.
+
 ## Scenarios
 
 There are different scenarios that will form the overall behaviour of the bank account.
