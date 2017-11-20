@@ -14,6 +14,8 @@ Optional packages are:
 
 Which kind of development environment is used, shouldn't make any difference. Start the Dojo when everybody is ready. This means every attendee had cloned the repository and opened the IDE of choice.
 
+The one who runs the Dojo should fork the code and create a new branch. Every attendee will clone this repository and work on the same branch. One one persons codes at the time and will run red --> green --> refactor --> commit --> push. Then the next one will make the next step. Some steps will have more than one test. Try making small steps with only small portions of code.
+
 Start the Dojo with the first scenario and do not read the next expectations until you reach them. Like in real life, you do not know what will a project own create next. Write a test that fails (red), write just enough code to make the test pass (green) and the refactor the code.
 
 ### VS Code
