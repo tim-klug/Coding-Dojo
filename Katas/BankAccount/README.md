@@ -4,7 +4,7 @@ Write a program that simulates a bank account.
 
 ## Getting Started
 
-The idea is to make this dojo in TDD and remote. So everybody is working on their own machine and environment. To give some guidance, all projects are already added. For testing we will use NUnit with FluentAssertions. All necessary packages are already added to the project. run a `dotnet restore` and start coding. Other frameworks are optional and can be used or just try out.
+The idea is to make this Dojo in TDD and remote. So everybody is working on their own machine and environment. To give some guidance, all projects are already added. For testing we will use NUnit with FluentAssertions. All necessary packages are already added to the project. run a `dotnet restore` and start coding. Other frameworks are optional and can be used or just try out.
 
 Optional packages are:
 
@@ -24,7 +24,7 @@ To start automatic testing run `dotnet watch test` in the command line (execute 
 
 ### R#
 
-Just kick of a continuos testing session.
+Just kick of a continuous testing session.
 
 ### NCrunch
 
@@ -36,7 +36,7 @@ Run every test with the associated shortcut and check the result.
 
 ## Scenarios
 
-There are different scenarios that will form the overall behaviour of the bank account.
+There are different scenarios that will form the overall behavior of the bank account.
 
 ### Scenario 1
 
@@ -44,7 +44,7 @@ Given a new bank account, when the bank account is newly created, then the initi
 
 ### Scenario 2
 
-Given a bank account, when deposing a given amount to an account, then this amount is added to to accounts balance.
+Given a bank account, when deposing a given amount to an account, then this amount is added to accounts balance.
 
 ### Scenario 3
 
@@ -60,7 +60,7 @@ Given a bank account with a credit limit, when withdrawing an amount from this a
 
 ### Scenario 6
 
-Given a bank aaount with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.
+Given a bank account with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.
 
 ### Scenario 7
 
@@ -68,7 +68,7 @@ Given a bank account with a transaction history, when the account holder asked f
 
 ### Scenario 8
 
-Given a transaction for a bank account, when the user added aa description, then this description is printed out with the account movements.
+Given a transaction for a bank account, when the user added as description, then this description is printed out with the account movements.
 
 ### Scenario 9
 
