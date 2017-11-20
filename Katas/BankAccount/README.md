@@ -14,6 +14,24 @@ Optional packages are:
 
 Which kind of development environment is used, shouldn't make any difference. Start the Dojo when everybody is ready. This means every attendee had cloned the repository and opened the IDE of choice.
 
+Start the Dojo with the first scenario and do not read the next expectations until you reach them. Like in real life, you do not know what will a project own create next. Write a test that fails (red), write just enough code to make the test pass (green) and the refactor the code.
+
+### VS Code
+
+To start automatic testing run `dotnet watch test` in the command line (execute this command in the root of the test project).
+
+### R#
+
+Just kick of a continuos testing session.
+
+### NCrunch
+
+Configure the runner and let's code.
+
+### VS
+
+Run every test with the associated shortcut and check the result.
+
 ## Scenarios
 
 There are different scenarios that will form the overall behaviour of the bank account.
