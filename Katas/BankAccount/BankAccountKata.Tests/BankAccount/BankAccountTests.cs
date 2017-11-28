@@ -23,5 +23,15 @@ namespace BankAccountKata.Tests.BankAccount
 
             bankAccount.Balance.Should().Be(42.17m);
         }
+
+		[Test(Description = "Given a bank account, when withdrawing an amount, then the account's balance is reduced by this amount.")]
+		public void Given_a_bank_account_when_withdrawing_an_amount_then_the_accounts_balance_is_reduced_by_this_amount()
+		{
+			var bankAccount = new Account();
+
+			bankAccount.Withdraw(55.55m);
+
+			bankAccount.Balance.Should().Be(-55.55m);
+		}
     }
 }

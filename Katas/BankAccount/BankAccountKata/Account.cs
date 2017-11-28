@@ -10,5 +10,10 @@ namespace BankAccountKata
         {
             Balance += deposit;
         }
+
+        public void Withdraw(decimal withdraw)
+        {
+            Balance -= withdraw;
+        }
     }
 }
