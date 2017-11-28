@@ -100,6 +100,25 @@ Given a bank account, when the account is of type instant access saving account,
 
 ### Scenario 10
 
-> Until now, every transaction had be withdrawn first and deposited separately. Hopefully no money had been lost during this process. But our system should combine them and check, if the destination account exists and proceed the booking. 
+> Until now, every transaction had be withdrawn first and deposited separately. Hopefully no money had been lost during this process. But our system should combine them and check, if the destination account exists and proceed the booking.
 
 Given two bank accounts from different users, when an amount is transferred from one account to the other, then the amount from the __from account__ is withdrawn and the amount is added to the __to account__.
+
+### Scenario 11
+
+> For more secure payment, we will need authentication from a principal before proceeding a payment. Our 3rd party component will check with a user token if the user is allowed to do a payment. Our selected provider will need a user and a payment to calculate a validation. Every payment must be checked here before accepting. Use the following interface:   
+
+```c#
+public interface IUserValidationProvider
+{
+    bool IsValid(IPayment payment);
+}
+
+public interface IPayment
+{
+    int AccountNumber { get; set; };
+    string AccountHolderName { get; set; }
+    decimal Amount { get; set; }
+}
+```
+
