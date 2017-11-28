@@ -6,8 +6,7 @@ namespace BankAccountKata
 	{
 		public decimal Balance { get; set; }
         public bool CanUseCredit { get; set; }
-
-        private const decimal Credit = 100;
+        public decimal CreditLimit { get; private set; } // not to change from outside ;)
 
         public void Deposit(decimal deposit)
         {
@@ -16,9 +15,15 @@ namespace BankAccountKata
 
         public void Withdraw(decimal withdraw)
         {
-            var balanceForWithdraw = CanUseCredit ? Balance + Credit : Balance;
+            var balanceForWithdraw = CanUseCredit ? Balance + CreditLimit : Balance;
             if (balanceForWithdraw - withdraw >= 0)
                 Balance -= withdraw;
+        }
+
+        public void Limit(decimal credit)
+        {
+            CreditLimit = credit;
+            CanUseCredit = true;
         }
     }
 }

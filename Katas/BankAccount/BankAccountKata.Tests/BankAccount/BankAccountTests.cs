@@ -59,11 +59,24 @@ namespace BankAccountKata.Tests.BankAccount
         [Test(Description = "Given a bank account with a possible credit, when withdrawing an amount from this account, that does exceed the balance, then the account's balance is negative.")]
         public void Given_a_bank_account_with_a_possible_credit_when_withdrawing_an_amount_from_this_account_that_does_exceed_the_balance_then_the_account_s_balance_is_negative()
         {
-            _account.CanUseCredit = true;
+            _account.Limit(100);
             _account.Deposit(50m);
             _account.Withdraw(70m);
 
             _account.Balance.Should().Be(-20);
+        }
+
+        [TestCase(0, 10, 20, 10, Description = "Given a bank account with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.")]
+        [TestCase(100, 10, 20, -10, Description = "Given a bank account with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.")]
+        [TestCase(50, 200, 20, 180, Description = "Given a bank account with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.")]
+        [TestCase(230, 0, 229, -229, Description = "Given a bank account with a credit limit, when a withdraw exceeds the amount of balance and credit, then the transaction is rejected.")]
+        public void Given_a_bank_account_with_a_credit_limit_when_a_withdraw_exceeds_the_amount_of_balance_and_credit_then_the_transaction_is_rejected(decimal credit, decimal deposit, decimal withdraw, decimal expected)
+        {
+            _account.Limit(credit);
+            _account.Deposit(deposit);
+            _account.Withdraw(withdraw);
+
+            _account.Balance.Should().Be(expected);
         }
     }
 }
