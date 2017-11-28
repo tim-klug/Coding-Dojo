@@ -13,7 +13,8 @@ namespace BankAccountKata
 
         public void Withdraw(decimal withdraw)
         {
-            Balance -= withdraw;
+            if (Balance - withdraw >= 0)
+                Balance -= withdraw;
         }
     }
 }
