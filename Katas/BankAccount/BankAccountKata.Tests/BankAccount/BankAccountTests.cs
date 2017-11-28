@@ -13,5 +13,15 @@ namespace BankAccountKata.Tests.BankAccount
 
 			bankAccount.Balance.Should().Be(0);
 		}
-	}
+
+        [Test(Description = "Given a bank account, when depositing a given amount to an account, then this amount is added to accounts balance.")]
+        public void Given_a_bank_account_when_depositing_a_given_amount_to_an_account_then_this_amount_is_added_to_accounts_balance()
+        {
+            var bankAccount = new Account();
+
+            bankAccount.Deposit(42.17m);
+
+            bankAccount.Balance.Should().Be(42.17m);
+        }
+    }
 }
