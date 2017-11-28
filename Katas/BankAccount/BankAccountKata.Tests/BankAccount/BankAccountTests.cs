@@ -54,6 +54,16 @@ namespace BankAccountKata.Tests.BankAccount
 			_bankAccount.Withdraw(withdraw);
 
 			_bankAccount.Balance.Should().Be(result);
-		}
+        }
+
+        [Test(Description = "Given a bank account with a possible credit, when withdrawing an amount from this account, that does exceed the balance, then the account's balance is negative.")]
+        public void Given_a_bank_account_with_a_possible_credit_when_withdrawing_an_amount_from_this_account_that_does_exceed_the_balance_then_the_account_s_balance_is_negative()
+        {
+            _bankAccount.CanUseCredit = true;
+            _bankAccount.Deposit(50m);
+            _bankAccount.Withdraw(70m);
+
+            _bankAccount.Balance.Should().Be(-20);
+        }
     }
 }
