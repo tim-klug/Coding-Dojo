@@ -6,41 +6,41 @@ namespace BankAccountKata.Tests.BankAccount
 	[TestFixture]
 	public class BankAccountTests
 	{
-        private Account _Account;
+        private Account _account;
 
         [SetUp]
 		public void Setup()
 		{
-			_Account = new Account();
+			_account = new Account();
 		}
 
 		[TearDown]
 		public void Cleanup()
 		{
-			_Account = null;
+			_account = null;
 		}
 
 		[Test(Description = "Given a new bank account, when the bank account is newly created, then the initial amount is zero.")]
 		public void Given_a_new_bank_account_when_the_bank_account_is_newly_created_then_the_initial_amount_is_zero()
 		{
-			_Account.Balance.Should().Be(0);
+			_account.Balance.Should().Be(0);
 		}
 
         [Test(Description = "Given a bank account, when depositing a given amount to an account, then this amount is added to accounts balance.")]
         public void Given_a_bank_account_when_depositing_a_given_amount_to_an_account_then_this_amount_is_added_to_accounts_balance()
         {
-            _Account.Deposit(42.17m);
+            _account.Deposit(42.17m);
 
-            _Account.Balance.Should().Be(42.17m);
+            _account.Balance.Should().Be(42.17m);
         }
 
 		[Test(Description = "Given a bank account, when withdrawing an amount, then the account's balance is reduced by this amount.")]
 		public void Given_a_bank_account_when_withdrawing_an_amount_then_the_accounts_balance_is_reduced_by_this_amount()
 		{
-			_Account.Deposit(55.55m);
-			_Account.Withdraw(55.55m);
+			_account.Deposit(55.55m);
+			_account.Withdraw(55.55m);
 
-			_Account.Balance.Should().Be(0);
+			_account.Balance.Should().Be(0);
 		}
 
 		[TestCase(30, 40, 30, Description="Given a bank account, when withdrawing an amount that exceeds the accounts balance, then the withdraw is rejected.")]
@@ -50,20 +50,20 @@ namespace BankAccountKata.Tests.BankAccount
 		[TestCase(0, 0, 0, Description="Given a bank account, when withdrawing an amount that exceeds the accounts balance, then the withdraw is rejected.")]
 		public void Given_a_bank_account_when_withdrawing_an_amount_that_exceeds_the_accounts_balance_then_the_withdraw_is_rejected(decimal deposit, decimal withdraw, decimal result)
 		{
-			_Account.Deposit(deposit);
-			_Account.Withdraw(withdraw);
+			_account.Deposit(deposit);
+			_account.Withdraw(withdraw);
 
-			_Account.Balance.Should().Be(result);
+			_account.Balance.Should().Be(result);
         }
 
         [Test(Description = "Given a bank account with a possible credit, when withdrawing an amount from this account, that does exceed the balance, then the account's balance is negative.")]
         public void Given_a_bank_account_with_a_possible_credit_when_withdrawing_an_amount_from_this_account_that_does_exceed_the_balance_then_the_account_s_balance_is_negative()
         {
-            _Account.CanUseCredit = true;
-            _Account.Deposit(50m);
-            _Account.Withdraw(70m);
+            _account.CanUseCredit = true;
+            _account.Deposit(50m);
+            _account.Withdraw(70m);
 
-            _Account.Balance.Should().Be(-20);
+            _account.Balance.Should().Be(-20);
         }
     }
 }
