@@ -98,7 +98,7 @@ Given a transaction for a bank account, when the user added a description, then 
 
 Given a bank account, when the account is of type instant access saving account, then money can only be transferred to a giro account of the same user.
 
-### Scenario 11
+### Scenario 10
 
 > Until now, every transaction had be withdrawn first and deposited separately. Hopefully no money had been lost during this process. But our system should combine them and check, if the destination account exists and proceed the booking. 
 
