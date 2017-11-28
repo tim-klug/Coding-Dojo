@@ -102,4 +102,4 @@ Given a bank account, when the account is of type instant access saving account,
 
 > Until now, every transaction had be withdrawn first and deposited separately. Hopefully no money had been lost during this process. But our system should combine them and check, if the destination account exists and proceed the booking. 
 
-Given two bank accounts from different users, when an amount is transferred from one account to the other, then the amount from the ```from account``` is withdrawn and the amount is added to the ```to account```.
+Given two bank accounts from different users, when an amount is transferred from one account to the other, then the amount from the __from account__ is withdrawn and the amount is added to the __to account__.
